@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+
+  <script>
+    // React is the CORE library which also being used by React Native etc
+    // React.createElement returns the object of element which contains props, key, children etc
+
+    // key
+    // null
+    // props
+    // {id: 'parent', children: Array(2)}
+    // ref
+    // null
+    // type
+    // "div"
+    // _owner
+    // null
+    // _store
+    // {validated: false}
+
+    // The createElement method take three parameters
+    // 1.  type of tag
+    // 2. object which contains the attributes src, href, id, class etc
+    // 3. The inner text of that element OR another react Element to show case as child OR it can take [array of multiple react element] to show case as siblings
+
+    const heading = React.createElement("div", { id: "parent" }, [
+      React.createElement("h1", { key: "123", id: "heading" }, "Heading"),
+      React.createElement("h2", { key: "456", id: "headings" }, "h2"),
+    ]);
+
+    // ReactDOM is the responsible for running react in the Browsers
+    // CreateRoot method just creates the root element and replace everything with what we have created using React.CreateElement method
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    // The root contains all the Fibre algorithm to render it
+    // Render method is the responsible to convert this Objects into actual html tags which browser can render
+    root.render(heading);
+  </script>
+</html>
