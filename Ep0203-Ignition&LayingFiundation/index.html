@@ -9,7 +9,7 @@
     <div id="root"></div>
   </body>
 
-  <script type = "module">
+  <script type="module">
     // React is the CORE library which also being used by React Native etc
     // React.createElement returns the object of element which contains props, key, children etc
 
@@ -32,17 +32,35 @@
     // 3. The inner text of that element OR another react Element to show case as child OR it can take [array of multiple react element] to show case as siblings
 
     import React from "react";
-    import ReactDOM from "react-dom/client"
+    import ReactDOM from "react-dom/client";
     const heading = React.createElement("div", { id: "parent" }, [
       React.createElement("h1", { key: "123", id: "heading" }, "Hey🚀"),
       React.createElement("h2", { key: "456", id: "headings" }, "Kashif"),
     ]);
+
+    // console.log("heading: ", heading);
+
+    const heading2 = <h1>bro</h1>;
+
+    const Heading = () => {
+      return (
+        <div>
+          <h1>{console.log("kashif")}</h1>
+          </div>
+          );
+        };
+
+    // console.log(Heading());
+    // console.log(<div>
+    //       <h1>Functional component</h1>
+    //     </div>)
+    // JSX and create React element returns the same object
 
     // ReactDOM is the responsible for running react in the Browsers
     // CreateRoot method just creates the root element and replace everything with what we have created using React.CreateElement method
     const root = ReactDOM.createRoot(document.getElementById("root"));
     // The root contains all the Fibre algorithm to render it
     // Render method is the responsible to convert this Objects into actual html tags which browser can render
-    root.render(heading);
+    root.render(<Heading/>);
   </script>
 </html>
