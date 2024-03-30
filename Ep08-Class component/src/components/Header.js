@@ -44,6 +44,9 @@ function Header() {
         <Link to="/about-us">
           <h3>About</h3>
         </Link>
+        <Link to="/user">
+          <h3>User</h3>
+        </Link>
       </div>
     </header>
   );
