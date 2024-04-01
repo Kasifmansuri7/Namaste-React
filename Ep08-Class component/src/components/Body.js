@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
-import Header from "./components/Header";
-import { restaurantsData } from "./utils/mockData";
-import RestaurantsCard from "./components/RestaurantsCard";
-import "./App.css";
+import RestaurantsCard from "./RestaurantsCard";
+import { useState, useEffect } from "react";
 
-function App() {
-<<<<<<< HEAD
-  let [kashif, setKashif] = useState(restaurantsData);
-  console.log("setKashif: ", setKashif);
-=======
-  let [restaurantList, setRestaurantList] = useState(restaurantsData);
->>>>>>> 55d567ebed4e2dca14ea15539ff3a28ff3bb95d4
+const Body = () => {
+  let [restaurantList, setRestaurantList] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -26,10 +18,11 @@ function App() {
     );
   };
 
+  if (restaurantList.length === 0) {
+    return <h1>Loading....</h1>;
+  }
   return (
     <>
-      <Header />
-
       <button
         className="filter-btn"
         onClick={() =>
@@ -47,6 +40,6 @@ function App() {
       </section>
     </>
   );
-}
+};
 
-export default App;
+export default Body;
