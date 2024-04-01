@@ -6,6 +6,7 @@ import "./App.css";
 
 function App() {
   let [kashif, setKashif] = useState(restaurantsData);
+  console.log("setKashif: ", setKashif);
 
   function handleFilter() {
     const filteredRes = kashif.filter((each) => each.info.avgRating > 4.2);
