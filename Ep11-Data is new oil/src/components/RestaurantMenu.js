@@ -22,13 +22,14 @@ const RestaurantMenu = () => {
     <div className="text-center">
       <h1 className="text-3xl my-6">{restaurant[2]?.card?.card?.info?.name}</h1>
       {/* accrrdion - collapsable menu*/}
+      {/* // controlled component */}
       {categories.map((c, index) => (
         <RestaurantCategory
           key={Math.random()}
           data={c?.card?.card}
-          index={index}
-          setShowIndex={setShowIndex}
-          showItem={index === showIndex}
+          setShowIndex={() => setShowIndex(index)}
+          removeShowIndex={() => setShowIndex(-1)}
+          showItem={index === showIndex ? true : false}
         />
       ))}
     </div>

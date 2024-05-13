@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import ThemeContext from "../utils/UserContext";
 function Header() {
+  const theme = useContext(ThemeContext);
+  console.log("theme: ", theme);
   return (
     <header className="flex justify-between p-4 mt-2">
       <Link to="/">

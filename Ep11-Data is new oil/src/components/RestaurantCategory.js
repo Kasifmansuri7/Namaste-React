@@ -2,15 +2,20 @@ import { useState } from "react";
 import AccordionHeader from "./AccordionHeader";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data, showItem, index, setShowIndex }) => {
+const RestaurantCategory = ({
+  data,
+  showItem,
+  setShowIndex,
+  removeShowIndex,
+}) => {
   return (
     <div className="flex flex-col items-center mx-10 my-4">
       <AccordionHeader
         title={data?.title}
         count={data?.itemCards?.length}
-        index={index}
         showItem={showItem}
         setShowIndex={setShowIndex}
+        removeShowIndex={removeShowIndex}
       />
 
       <div className="w-6/12 overflow-hidden flex-col items-center">

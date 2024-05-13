@@ -6,6 +6,7 @@ import Body from "./components/Body";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import ThemeContext from "./utils/UserContext";
 
 const AppLayout = () => {
   return (
@@ -52,7 +53,11 @@ const appRouter = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={appRouter} />;
+  return (
+    <ThemeContext.Provider value={"broo"}>
+      <RouterProvider router={appRouter} />
+    </ThemeContext.Provider>
+  );
 }
 
 export default App;

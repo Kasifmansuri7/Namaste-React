@@ -1,7 +1,17 @@
-const AccordionHeader = ({ title, count, showItem, index, setShowIndex }) => {
-  console.log("index: ", index);
+const AccordionHeader = ({
+  title,
+  count,
+  showItem,
+  setShowIndex,
+  removeShowIndex,
+}) => {
   handleClick = () => {
-    setShowIndex(index != -1 ? -1 : index);
+    // if open and then close it otherwise open it
+    if (showItem) {
+      removeShowIndex();
+    } else {
+      setShowIndex();
+    }
   };
   return (
     <div
