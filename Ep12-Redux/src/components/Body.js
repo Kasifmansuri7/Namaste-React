@@ -45,14 +45,14 @@ const Body = () => {
   }
 
   return (
-    <>
+    <section>
       <button
         className="text-white border p-2 bg-amber-500 rounded-md hover:bg-amber-400 shadow-md mt-4"
         onClick={handleFilter}
       >
         Top Rated Restaurants
       </button>
-      <section className="flex flex-wrap mt-2">
+      <div className="flex flex-wrap mt-2">
         {restaurantList?.length &&
           restaurantList.map((res, index) => {
             index % 2 == 0 ? (res.info.isOpen = false) : true;
@@ -62,8 +62,8 @@ const Body = () => {
               <RestaurantsCard key={res.info.id} {...res.info} />
             );
           })}
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
